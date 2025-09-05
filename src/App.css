@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+body {
+  background-color: #ddd;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/***** Hero *****/
+.hero {
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 5px #00000099;
+  padding: 15px;
+}
+
+.hero img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  max-width: 110%;
+  transition: 5s width;
+  min-height: 100%;
+}
+
+.hero:hover img {
+  width: 110%;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero p {
+  color: #dddddd;
+  font-size: 14px;
+  text-align: center;
+}
+
+.hero input[type="search"] {
+  background-color: #000000aa;
+  margin: 15px 0;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 25px;
+  width: 250px;
+}
+
+/***** Characters & Comics *****/
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 15px auto;
+}
+
+.card {
+  width: 200px;
+  background-color: #333333;
+  color: white;
+  position: relative;
+}
+
+.card .favorite {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  padding: 5px;
+  background-color: white;
+  color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #00000099;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.card-image {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  border-bottom: 7px solid red;
+}
+
+.card-image img {
+  height: 100%;
+  left: 0;
+  max-width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-infos {
+  padding: 15px;
+  height: 120px;
+}
+
+.card-infos--title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.card-infos--description {
+  color: #eeeeee;
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  background: #333333;
+  left: 0;
+  padding: 15px;
+  z-index: 2;
+  max-height: 0;
+  transition: 0.5s all;
+  overflow: hidden;
+}
+
+.card:hover .card-infos--description {
+  max-height: 100%;
+}
+
+.no-data,
+.loading {
+  color: #333333;
+  text-align: center;
+  padding: 15px;
+}
+
+/***** Signup/Login *****/
+#signup,
+#login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  margin: 120px auto;
+  width: 300px;
+  max-width: 100%;
+}
+
+#signup h1,
+#login h1 {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+#signup form,
+#login form {
+  padding: 15px;
+  margin: 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+#signup form input,
+#login form input {
+  padding: 8px;
+  border-bottom: 2px solid var(--color-gray-900);
+}
+
+#signup form input:focus,
+#login form input:focus {
+  border-color: red;
+  outline: none;
+}
+
+#signup form button,
+#login form button {
+  padding: 8px;
+  background-color: var(--color-gray-900);
+  color: white;
+  transition: 0.5s background-color;
+  cursor: pointer;
+}
+
+#signup form button:hover,
+#login form button:hover {
+  background-color: red;
+}
+
+#signup form .error-message,
+#login form .error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
